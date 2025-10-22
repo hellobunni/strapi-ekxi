@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_badges",
+  "info": {
+    "displayName": "Badge",
+    "icon": "award",
+    "description": "Decorative badge component"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "default": "bg-yellow-400"
+    },
+    "textColor": {
+      "type": "string",
+      "default": "text-black"
+    }
+  }
+}
+

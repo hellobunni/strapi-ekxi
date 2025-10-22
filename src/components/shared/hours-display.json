@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_hours_displays",
+  "info": {
+    "displayName": "Hours Display",
+    "icon": "clock",
+    "description": "Display hours for a day or range of days"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "string",
+      "required": true
+    },
+    "time": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
+

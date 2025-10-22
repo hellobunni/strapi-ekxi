@@ -4,6 +4,14 @@ module.exports = ({ env }) => ({
       jwtSecret: env("JWT_SECRET"),
     },
   },
+  'cloudinary-media-library': {
+    enabled: true,
+    config: {
+      cloudName: env('CLOUDINARY_NAME'),
+      apiKey: env('CLOUDINARY_KEY'),
+      encryptionKey: env('CLOUDINARY_SECRET'),
+    },
+  },
   upload: {
     config: {
       provider: "local",

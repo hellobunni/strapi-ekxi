@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_features",
+  "info": {
+    "displayName": "Feature",
+    "icon": "star",
+    "description": "Feature card with icon and description"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "iconColor": {
+      "type": "string",
+      "default": "text-red-500"
+    },
+    "bgColor": {
+      "type": "string",
+      "default": "bg-red-100"
+    }
+  }
+}
+

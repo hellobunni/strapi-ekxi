@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "operating_hours",
+  "info": {
+    "singularName": "operating-hours",
+    "pluralName": "operating-hours-list",
+    "displayName": "Operating Hours",
+    "description": "Restaurant operating hours"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mondayFriday": {
+      "type": "string",
+      "required": true
+    },
+    "saturday": {
+      "type": "string",
+      "required": true
+    },
+    "sunday": {
+      "type": "string",
+      "required": true
+    },
+    "dailyHours": {
+      "type": "string"
+    },
+    "displayHours": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.hours-display"
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_image_data",
+  "info": {
+    "displayName": "Image Data",
+    "icon": "picture",
+    "description": "Image with metadata"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
+

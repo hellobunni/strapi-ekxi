@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "location",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Locations",
+    "description": "Current location and service area"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "currentLocationName": {
+      "type": "string",
+      "required": true
+    },
+    "currentLocationAddress": {
+      "type": "string",
+      "required": true
+    },
+    "coordinates": {
+      "type": "component",
+      "component": "shared.coordinates",
+      "repeatable": false
+    },
+    "serviceArea": {
+      "type": "string",
+      "required": false
+    },
+    "location_status": {
+      "type": "boolean"
+    },
+    "location_announcements": {
+      "type": "string"
+    },
+    "isCurrent": {
+      "type": "boolean"
+    },
+    "displayOrder": {
+      "type": "integer"
+    }
+  }
+}

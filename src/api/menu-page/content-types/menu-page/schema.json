@@ -1,0 +1,37 @@
+{
+  "kind": "singleType",
+  "collectionName": "menu_page",
+  "info": {
+    "singularName": "menu-page",
+    "pluralName": "menu-pages",
+    "displayName": "Menu Page",
+    "description": "Menu page content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "highlightedWord": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "menuCategories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::menu-category.menu-category"
+    }
+  }
+}
+

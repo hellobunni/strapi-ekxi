@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_page_sections_menu_preview_sections",
+  "info": {
+    "displayName": "Menu Preview Section",
+    "icon": "restaurant",
+    "description": "Menu preview section with CTAs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "highlightedWord": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaButtons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.cta-button"
+    },
+    "badges": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.badge"
+    }
+  }
+}
+

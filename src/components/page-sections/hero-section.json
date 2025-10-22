@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_page_sections_hero_sections",
+  "info": {
+    "displayName": "Hero Section",
+    "icon": "landscape",
+    "description": "Hero section with title, subtitle, and CTAs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "highlightedWord": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text",
+      "required": true
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "carousel_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

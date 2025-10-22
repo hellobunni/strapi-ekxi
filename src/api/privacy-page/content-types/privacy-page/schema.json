@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacy_page",
+  "info": {
+    "singularName": "privacy-page",
+    "pluralName": "privacy-pages",
+    "displayName": "Privacy Page",
+    "description": "Privacy policy page content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "highlightedWord": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "lastUpdated": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
+
