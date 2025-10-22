@@ -12,21 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "highlightedWord": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "text"
-    },
-    "backgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
     "menuCategories": {
       "type": "relation",
       "relation": "oneToMany",
@@ -34,4 +19,3 @@
     }
   }
 }
-

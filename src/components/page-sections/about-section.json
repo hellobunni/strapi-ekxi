@@ -7,33 +7,16 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "subtitle": {
-      "type": "string",
-      "required": true
-    },
     "description": {
       "type": "text",
       "required": true
     },
-    "features": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.feature"
-    },
-    "badges": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.badge"
-    },
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
-

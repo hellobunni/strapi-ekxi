@@ -12,22 +12,8 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "highlightedWord": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "text"
-    },
     "lastUpdated": {
       "type": "string"
-    },
-    "content": {
-      "type": "richtext"
     }
   }
 }
-

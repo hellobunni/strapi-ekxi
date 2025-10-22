@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "email": {
-      "type": "email",
-      "required": true
-    },
-    "phone": {
-      "type": "string",
-      "required": true
-    },
     "serviceArea": {
       "type": "string",
       "required": true
@@ -29,9 +21,8 @@
     },
     "socialMedia": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.social-media-link"
+      "component": "shared.social-media-link",
+      "repeatable": true
     }
   }
 }
-

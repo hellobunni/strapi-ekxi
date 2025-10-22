@@ -12,26 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "subtitle": {
-      "type": "text"
-    },
-    "contactInfoTitle": {
-      "type": "string",
-      "default": "Contact Information"
-    },
-    "funFactsTitle": {
-      "type": "string",
-      "default": "Fun Facts"
-    },
-    "backgroundImage": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": ["images"]
-    },
     "funFacts": {
       "type": "relation",
       "relation": "oneToMany",
@@ -39,4 +19,3 @@
     }
   }
 }
-

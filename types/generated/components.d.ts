@@ -8,12 +8,8 @@ export interface PageSectionsAboutSection extends Struct.ComponentSchema {
     icon: 'information';
   };
   attributes: {
-    badges: Schema.Attribute.Component<'shared.badge', true>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
-    features: Schema.Attribute.Component<'shared.feature', true>;
     image: Schema.Attribute.Media<'images'>;
-    subtitle: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -30,9 +26,6 @@ export interface PageSectionsHeroSection extends Struct.ComponentSchema {
       true
     >;
     hero_image: Schema.Attribute.Media<'images'>;
-    highlightedWord: Schema.Attribute.String;
-    subtitle: Schema.Attribute.Text & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -44,12 +37,7 @@ export interface PageSectionsMenuPreviewSection extends Struct.ComponentSchema {
     icon: 'restaurant';
   };
   attributes: {
-    badges: Schema.Attribute.Component<'shared.badge', true>;
-    ctaButtons: Schema.Attribute.Component<'shared.cta-button', true>;
     description: Schema.Attribute.Text;
-    highlightedWord: Schema.Attribute.String;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

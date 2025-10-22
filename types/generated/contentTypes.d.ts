@@ -419,15 +419,10 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<'images'>;
-    contactInfoTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Contact Information'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     funFacts: Schema.Attribute.Relation<'oneToMany', 'api::fun-fact.fun-fact'>;
-    funFactsTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Fun Facts'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -435,8 +430,6 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.Text;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -458,14 +451,12 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    email: Schema.Attribute.Email & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact.contact'
     > &
       Schema.Attribute.Private;
-    phone: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     serviceArea: Schema.Attribute.String & Schema.Attribute.Required;
     serviceAreaDescription: Schema.Attribute.String;
@@ -492,24 +483,13 @@ export interface ApiFindUsPageFindUsPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    currentLocationTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Current Location'>;
-    followUsTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Follow for Live Locations'>;
-    highlightedWord: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::find-us-page.find-us-page'
     > &
       Schema.Attribute.Private;
-    locationHoursTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Location & Hours'>;
-    operatingHoursTitle: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'Operating Hours'>;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.Text;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -717,11 +697,9 @@ export interface ApiMenuPageMenuPage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<'images'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    highlightedWord: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -732,38 +710,6 @@ export interface ApiMenuPageMenuPage extends Struct.SingleTypeSchema {
       'oneToMany',
       'api::menu-category.menu-category'
     >;
-    publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.Text;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiNavigationNavigation extends Struct.SingleTypeSchema {
-  collectionName: 'navigation';
-  info: {
-    description: 'Site navigation menu';
-    displayName: 'Navigation';
-    pluralName: 'navigations';
-    singularName: 'navigation';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    items: Schema.Attribute.Component<'shared.navigation-item', true> &
-      Schema.Attribute.Required;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::navigation.navigation'
-    > &
-      Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -817,11 +763,9 @@ export interface ApiPrivacyPagePrivacyPage extends Struct.SingleTypeSchema {
     draftAndPublish: false;
   };
   attributes: {
-    content: Schema.Attribute.RichText;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    highlightedWord: Schema.Attribute.String;
     lastUpdated: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -830,8 +774,6 @@ export interface ApiPrivacyPagePrivacyPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subtitle: Schema.Attribute.Text;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -859,7 +801,6 @@ export interface ApiRestaurantRestaurant extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     email: Schema.Attribute.Email;
-    founded: Schema.Attribute.Integer & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -870,18 +811,8 @@ export interface ApiRestaurantRestaurant extends Struct.SingleTypeSchema {
     name: Schema.Attribute.String & Schema.Attribute.Required;
     phone_number: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    rating: Schema.Attribute.Decimal &
-      Schema.Attribute.SetMinMax<
-        {
-          max: 5;
-          min: 0;
-        },
-        number
-      >;
     service_area: Schema.Attribute.String;
     tagline: Schema.Attribute.String & Schema.Attribute.Required;
-    totalReviews: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    totalServed: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1438,7 +1369,6 @@ declare module '@strapi/strapi' {
       'api::menu-category.menu-category': ApiMenuCategoryMenuCategory;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
       'api::menu-page.menu-page': ApiMenuPageMenuPage;
-      'api::navigation.navigation': ApiNavigationNavigation;
       'api::operating-hours.operating-hours': ApiOperatingHoursOperatingHours;
       'api::privacy-page.privacy-page': ApiPrivacyPagePrivacyPage;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;

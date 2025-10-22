@@ -7,17 +7,6 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "highlightedWord": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "text",
-      "required": true
-    },
     "hero_image": {
       "type": "media",
       "multiple": false,

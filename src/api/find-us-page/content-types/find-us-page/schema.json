@@ -12,37 +12,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "highlightedWord": {
-      "type": "string"
-    },
-    "subtitle": {
-      "type": "text"
-    },
-    "locationHoursTitle": {
-      "type": "string",
-      "default": "Location & Hours"
-    },
-    "currentLocationTitle": {
-      "type": "string",
-      "default": "Current Location"
-    },
-    "operatingHoursTitle": {
-      "type": "string",
-      "default": "Operating Hours"
-    },
-    "followUsTitle": {
-      "type": "string",
-      "default": "Follow for Live Locations"
-    },
     "backgroundImage": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
-
