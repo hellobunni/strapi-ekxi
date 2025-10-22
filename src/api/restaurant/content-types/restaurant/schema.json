@@ -49,6 +49,9 @@
     },
     "service_area": {
       "type": "string"
+    },
+    "privacyPageLastUpdate": {
+      "type": "string"
     }
   }
 }

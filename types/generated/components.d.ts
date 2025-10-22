@@ -41,22 +41,6 @@ export interface PageSectionsMenuPreviewSection extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedBadge extends Struct.ComponentSchema {
-  collectionName: 'components_shared_badges';
-  info: {
-    description: 'Decorative badge component';
-    displayName: 'Badge';
-    icon: 'award';
-  };
-  attributes: {
-    color: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'bg-yellow-400'>;
-    text: Schema.Attribute.String & Schema.Attribute.Required;
-    textColor: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'text-black'>;
-  };
-}
-
 export interface SharedCoordinates extends Struct.ComponentSchema {
   collectionName: 'components_shared_coordinates';
   info: {
@@ -169,7 +153,6 @@ declare module '@strapi/strapi' {
       'page-sections.about-section': PageSectionsAboutSection;
       'page-sections.hero-section': PageSectionsHeroSection;
       'page-sections.menu-preview-section': PageSectionsMenuPreviewSection;
-      'shared.badge': SharedBadge;
       'shared.coordinates': SharedCoordinates;
       'shared.cta-button': SharedCtaButton;
       'shared.feature': SharedFeature;

@@ -422,7 +422,6 @@ export interface ApiContactPageContactPage extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    funFacts: Schema.Attribute.Relation<'oneToMany', 'api::fun-fact.fun-fact'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -461,70 +460,6 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
     serviceArea: Schema.Attribute.String & Schema.Attribute.Required;
     serviceAreaDescription: Schema.Attribute.String;
     socialMedia: Schema.Attribute.Component<'shared.social-media-link', true>;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiFindUsPageFindUsPage extends Struct.SingleTypeSchema {
-  collectionName: 'find_us_page';
-  info: {
-    description: 'Find Us page content';
-    displayName: 'Find Us Page';
-    pluralName: 'find-us-pages';
-    singularName: 'find-us-page';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    backgroundImage: Schema.Attribute.Media<'images'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::find-us-page.find-us-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiFunFactFunFact extends Struct.CollectionTypeSchema {
-  collectionName: 'fun_facts';
-  info: {
-    description: 'Fun facts about the restaurant';
-    displayName: 'Fun Fact';
-    pluralName: 'fun-facts';
-    singularName: 'fun-fact';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    bgColor: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'bg-blue-100'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
-    icon: Schema.Attribute.String & Schema.Attribute.Required;
-    iconColor: Schema.Attribute.String &
-      Schema.Attribute.DefaultTo<'text-blue-600'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::fun-fact.fun-fact'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -751,35 +686,6 @@ export interface ApiOperatingHoursOperatingHours
   };
 }
 
-export interface ApiPrivacyPagePrivacyPage extends Struct.SingleTypeSchema {
-  collectionName: 'privacy_page';
-  info: {
-    description: 'Privacy policy page content';
-    displayName: 'Privacy Page';
-    pluralName: 'privacy-pages';
-    singularName: 'privacy-page';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    lastUpdated: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::privacy-page.privacy-page'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiRestaurantRestaurant extends Struct.SingleTypeSchema {
   collectionName: 'restaurant';
   info: {
@@ -810,6 +716,7 @@ export interface ApiRestaurantRestaurant extends Struct.SingleTypeSchema {
     logo: Schema.Attribute.Media<'images'>;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     phone_number: Schema.Attribute.String;
+    privacyPageLastUpdate: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     service_area: Schema.Attribute.String;
     tagline: Schema.Attribute.String & Schema.Attribute.Required;
@@ -1362,15 +1269,12 @@ declare module '@strapi/strapi' {
       'api::carousel-image.carousel-image': ApiCarouselImageCarouselImage;
       'api::contact-page.contact-page': ApiContactPageContactPage;
       'api::contact.contact': ApiContactContact;
-      'api::find-us-page.find-us-page': ApiFindUsPageFindUsPage;
-      'api::fun-fact.fun-fact': ApiFunFactFunFact;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::location.location': ApiLocationLocation;
       'api::menu-category.menu-category': ApiMenuCategoryMenuCategory;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
       'api::menu-page.menu-page': ApiMenuPageMenuPage;
       'api::operating-hours.operating-hours': ApiOperatingHoursOperatingHours;
-      'api::privacy-page.privacy-page': ApiPrivacyPagePrivacyPage;
       'api::restaurant.restaurant': ApiRestaurantRestaurant;
       'api::seo.seo': ApiSeoSeo;
       'plugin::content-releases.release': PluginContentReleasesRelease;

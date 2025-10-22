@@ -11,11 +11,5 @@
     "draftAndPublish": false
   },
   "pluginOptions": {},
-  "attributes": {
-    "funFacts": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::fun-fact.fun-fact"
-    }
-  }
+  "attributes": {}
 }
